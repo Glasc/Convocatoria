@@ -1,0 +1,84 @@
+@import '../colors.scss';
+
+.container {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  min-height: 100vh;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 0.7fr 1fr;
+  justify-content: center;
+  align-items: center;
+  gap: 5em;
+  width: min(90%, 1400px);
+  margin: 3em auto;
+}
+
+.heroLeft {
+  & > * + * {
+    margin-top: 1em;
+  }
+  & h3 {
+    font-weight: 500;
+    letter-spacing: 2px;
+    font-size: 1.2rem;
+    & span {
+      color: $cta;
+    }
+  }
+  & h2 {
+    margin-top: 0.1em;
+    font-size: 3.5rem;
+    line-height: 3.5rem;
+    color: $primary;
+    & span {
+    }
+  }
+  & p {
+    color: $tertiary;
+    font-size: 1.2rem;
+    font-weight: 400;
+  }
+}
+
+.heroRight {
+  text-align: right;
+}
+
+.footer {
+  background-color: #f2f2f2;
+  display: flex;
+  align-items: center;
+  & .cards {
+    width: min(90%, 1400px);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    justify-content: space-between;
+    align-items: center;
+    gap: 4em;
+    padding: 3em 0;
+    margin: 0 auto;
+    & .card {
+      background-color: white;
+      border-radius: 6px;
+      padding: 2em 4em;
+      text-align: center;
+      box-shadow: 0 1px 3px rgb(0 0 0 / 5%), rgb(0 0 0 / 5%) 0px 20px 25px -5px,
+        rgb(0 0 0 / 4%) 0px 10px 10px -5px;
+      & h4 {
+        font-size: 1.75rem;
+        color: $primary;
+      }
+      & p {
+        color: $tertiary;
+        font-weight: 450;
+        font-size: 1.05rem;
+      }
+      & > * + * {
+        margin-top: 0.75em;
+      }
+    }
+  }
+}

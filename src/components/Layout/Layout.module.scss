@@ -1,4 +1,4 @@
-@import "../../styles/colors.scss";
+@import '../../styles/colors.scss';
 
 .container {
   min-height: 100vh;
@@ -9,10 +9,12 @@
 
 .navbar {
   background-color: #fff;
-  border-bottom: 1px solid #dfdfdf;
+  border-bottom: 1.3px solid #dfdfdf;
   padding: 0;
   position: sticky;
   top: 0;
+  height: 10vh;
+  
   & .elements {
     width: min(90%, 1400px);
     margin: 0 auto;
@@ -28,7 +30,6 @@
         color: $cta;
       }
     }
-
     & .links {
       grid-column: span 1;
       justify-self: center;
@@ -37,14 +38,18 @@
       gap: 1.75em;
       & .link {
         padding: 1.5em 0;
-        color: $tertiary;
-        font-size: 1.35rem;
+        color: $quartiary;
+        font-size: 1.45rem;
+        font-weight: 500;
+      
       }
     }
+  }
+  & > .linkActive {
+    color: blue;
+    background-color: black;
   }
 }
 
 .main {
-  width: min(90%, 1400px);
-  margin: 0 auto;
 }

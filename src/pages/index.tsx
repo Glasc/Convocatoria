@@ -1,17 +1,60 @@
-import type { NextPage } from "next"
-import MainPageLayout from "../components/MainPageLayout/MainPageLayout"
+import type { NextPage } from 'next'
+import Image from 'next/image'
+import Button from '../components/ui/button/Button'
+import styles from '../styles/pages/index.module.scss'
 
 const Home: NextPage = () => {
   return (
-    <>
-      <h3>Jóvenes Investigadores</h3>
-      <h2>Participa en el primer Coloquio de Investigación</h2>
-      <p>
-        Presenta tus avances de proyectos de taller de investigación II,
-        residencia, tésis y de posgrado que cursan la asignatura en seminario II
-        de la Maestría en Administración y Sistemas Computacionales
-      </p>
-    </>
+    <section className={styles.container}>
+      <section className={styles.hero}>
+        <div className={styles.heroLeft}>
+          <h3>
+            Jóvenes <span>Investigadores</span>
+          </h3>
+          <h2>
+            Participa <span>en el primer</span> Coloquio de Investigación
+          </h2>
+          <p>
+            Presenta tus avances de proyectos de taller de investigación II,
+            residencia, tésis y de posgrado que cursan la asignatura en
+            seminario II de la Maestría en Administración y Sistemas
+            Computacionales
+          </p>
+          <Button>Inscribirse</Button>
+        </div>
+        <div className={styles.heroRight}>
+          <Image
+            className={styles.heroImg}
+            src='/hero.svg'
+            alt='Picture of the author'
+            width={500}
+            height={500}
+          />
+        </div>
+      </section>
+      <footer className={styles.footer}>
+        <div className={styles.cards}>
+          <div className={styles.card}>
+            <h4>Objetivo</h4>
+            <p>
+              Fomentar la divulgación y difusion de los proyectos de
+              investigacion realizados por alumnos del TecMM, así como promover
+              las relaciones entre investigadores jovenes, incentivando el
+              intercambio de ideas y las colaboraciones entre grupos.
+            </p>
+          </div>
+          <div className={styles.card}>
+            <h4>Sede y Fecha</h4>
+            <p>
+              El coloquio se llevará a cabo en las instalaciones de la Unidad
+              Academica de Puerto Vallarta, los dias jueves 02 y viemes 03 de
+              junio del 2022. Integrando la presentacion de dos conferencias
+              magistrates, distribuidas una al inicio y at final del evento.
+            </p>
+          </div>
+        </div>
+      </footer>
+    </section>
   )
 }
 

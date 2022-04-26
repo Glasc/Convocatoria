@@ -1,8 +1,10 @@
-import Link from "next/link"
-import styles from "./MainPageLayout.module.scss"
-import colors from '../../styles/colors.module.scss'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
+import styles from './Layout.module.scss'
 
 function Navbar() {
+  const { asPath } = useRouter()
+
   return (
     <nav className={styles.navbar}>
       <div className={styles.elements}>
@@ -11,18 +13,18 @@ function Navbar() {
         </h1>
         <ul className={styles.links}>
           <li className={styles.link}>
-            <Link href="/">
-              <a>Inicio</a>
+            <Link href='/'>
+              <a className={asPath === '/' ? 'linkActive' : ''}>Inicio</a>
             </Link>
           </li>
           <li className={styles.link}>
-            <Link href="/descripcion">
-              <a>Descripción</a>
+            <Link href='/inscripcion'>
+              <a className={asPath === '/inscripcion' ? 'linkActive' : ''}>Inscripción</a>
             </Link>
           </li>
           <li className={styles.link}>
-            <Link href="/comite">
-              <a>Comité</a>
+            <Link href='/comite'>
+              <a className={asPath === '/comite' ? 'linkActive' : ''}>Comité</a>
             </Link>
           </li>
         </ul>
@@ -31,13 +33,13 @@ function Navbar() {
   )
 }
 
-const MainPageLayout = ({ children }: any) => {
+const Layout = ({ children }: any) => {
   return (
-    <div className={styles.container} >
+    <div className={styles.container}>
       <Navbar />
       <main className={styles.main}>{children}</main>
     </div>
   )
 }
 
-export default MainPageLayout
+export default Layout
